@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tidbits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% if can? :ror, @tidbits %>
+    <%= 'Hiddedn Text' %> |
+  <% end %>
+  <tbody>
+    <% @tidbits.each do |tidbit| %>
+      <tr>
+        <td><%= tidbit.body %></td>
+        <td><%= link_to 'Show', tidbit %></td>
+        <td><%= link_to 'Edit', edit_tidbit_path(tidbit) %></td>
+        <td><%= link_to 'Destroy', tidbit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tidbit', new_tidbit_path %>

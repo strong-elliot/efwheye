@@ -1,0 +1,22 @@
+<%= form_with(model: tidbit, local: true) do |form| %>
+  <% if tidbit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tidbit.errors.count, "error") %> prohibited this tidbit from being saved:</h2>
+
+      <ul>
+      <% tidbit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :tidbit_body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
