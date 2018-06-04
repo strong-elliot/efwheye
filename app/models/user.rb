@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         ROLES = %i[rails ruby poker positive ee]
+         ROLES = %i[rails ruby poker positive ee random]
 
          def roles=(roles)
            roles = [*roles].map { |r| r.to_sym }

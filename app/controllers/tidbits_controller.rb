@@ -7,6 +7,12 @@ class TidbitsController < ApplicationController
   # GET /tidbits.json
   def index
     @tidbits = Tidbit.all
+    @tid_ruby = Tidbit.where(subject: "ruby")
+  @tid_positive = Tidbit.where(subject: "positive")
+  @tid_ee = Tidbit.where(subject: "ee")
+  @tid_random = Tidbit.where(subject: "random")
+  @tid_poker = Tidbit.where(subject: "poker")
+  @tid_rails = Tidbit.where(subject: "rails")
   end
 
   # GET /tidbits/1
